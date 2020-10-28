@@ -7,6 +7,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { HttpClient, HttpClientModule, HttpHeaders, HttpRequest } from '@angular/common/http';
 import  Dexie  from 'dexie';
+import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
 
 
 
@@ -201,6 +202,7 @@ function HttpLoaderFactory(http: HttpClient) {
           deps: [HttpClient]
       }
     }),
+    NgxMapboxGLModule
   ],
   providers: [
     DestinosApiClient,
