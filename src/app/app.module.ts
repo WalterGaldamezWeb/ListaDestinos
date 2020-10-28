@@ -8,7 +8,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { HttpClient, HttpClientModule, HttpHeaders, HttpRequest } from '@angular/common/http';
 import  Dexie  from 'dexie';
 import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import { AppComponent } from './app.component';
@@ -36,6 +36,8 @@ import { DestinoViaje } from './models/destino-viaje.model';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { from, Observable } from 'rxjs';
 import { flatMap } from 'rxjs/operators';
+import { EspiameDirective } from './espiame.directive';
+import { TrackearClickDirective } from './trackear-click.directive';
 
 // init routing
 export const childrenRoutesVuelos: Routes = [
@@ -183,7 +185,9 @@ function HttpLoaderFactory(http: HttpClient) {
     VuelosComponent,
     VuelosMainComponent,
     VuelosMasInfoComponent,
-    VuelosDetalleComponent
+    VuelosDetalleComponent,
+    EspiameDirective,
+    TrackearClickDirective
   ],
   imports: [
     BrowserModule,
@@ -202,7 +206,8 @@ function HttpLoaderFactory(http: HttpClient) {
           deps: [HttpClient]
       }
     }),
-    NgxMapboxGLModule
+    NgxMapboxGLModule,
+    BrowserAnimationsModule
   ],
   providers: [
     DestinosApiClient,
